@@ -1,0 +1,59 @@
+version: '3.7'
+services:
+  mariadb:
+    image: mariadb:10.3
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mariadb
+      MYSQL_USER: frappe
+      MYSQL_PASSWORD: frappe
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:5
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+  frappe:
+    # Template image; adjust tag/version to match your Frappe/ERPNext target.
+    image: frappe/erpnext-worker:version-13
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      SITE_NAME: site1.local
+      DB_ROOT_PASSWORD: root
+      ADMIN_PASSWORD: admin
+      REDIS_QUEUE_HOST: redis
+      REDIS_CACHE_HOST: redis
+      REDIS_SOCKETIO_HOST: redis
+    volumes:
+      - ./sites:/home/frappe/frappe-bench/sites
+    ports:
+      - "8000:8000"
+
+  nginx:
+    # Template nginx image for Frappe; adjust to your image/tag as needed.
+    image: frappe/erpnext-nginx:version-13
+    restart: unless-stopped
+    depends_on:
+      - frappe
+    ports:
+      - "80:80"
+    volumes:
+      - ./sites:/home/frappe/frappe-bench/sites
+
+volumes:
+  mariadb_data:
+  redis_data:

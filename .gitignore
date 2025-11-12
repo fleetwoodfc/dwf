@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+.env
+/sites/*
+!sites/.gitignore
+node_modules/
+dist/
+*.log
