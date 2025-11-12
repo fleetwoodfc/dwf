@@ -1,0 +1,18 @@
+{"""
+  "doctype": "DocType",
+  "name": "ActivityInstance",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "process_instance", "fieldtype": "Link", "options": "ProcessInstance", "label": "Process Instance"},
+    {"fieldname": "activity_id", "fieldtype": "Data", "label": "Activity ID"},
+    {"fieldname": "status", "fieldtype": "Select", "options": "pending\nin_progress\ncompleted\nfailed\nescalated", "label": "Status"},
+    {"fieldname": "assigned_to", "fieldtype": "Link", "options": "User", "label": "Assigned To"},
+    {"fieldname": "due_date", "fieldtype": "Datetime", "label": "Due Date"},
+    {"fieldname": "inputs", "fieldtype": "Text", "label": "Inputs (JSON)"},
+    {"fieldname": "outputs", "fieldtype": "Text", "label": "Outputs (JSON)"},
+    {"fieldname": "started_at", "fieldtype": "Datetime", "label": "Started At"},
+    {"fieldname": "completed_at", "fieldtype": "Datetime", "label": "Completed At"}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""

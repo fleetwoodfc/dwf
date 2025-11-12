@@ -1,0 +1,17 @@
+{"""
+  "doctype": "DocType",
+  "name": "ProcessInstance",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "workflow_definition", "fieldtype": "Link", "options": "WorkflowDefinition", "label": "Workflow Definition"},
+    {"fieldname": "workflow_version", "fieldtype": "Data", "label": "Workflow Version"},
+    {"fieldname": "status", "fieldtype": "Select", "options": "created\nrunning\ncompleted\nfailed\ncancelled", "label": "Status"},
+    {"fieldname": "initiated_by", "fieldtype": "Link", "options": "User", "label": "Initiated By"},
+    {"fieldname": "started_at", "fieldtype": "Datetime", "label": "Started At"},
+    {"fieldname": "completed_at", "fieldtype": "Datetime", "label": "Completed At"},
+    {"fieldname": "correlation_id", "fieldtype": "Data", "label": "Correlation ID"},
+    {"fieldname": "properties", "fieldtype": "Text", "label": "Properties (JSON)"}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""

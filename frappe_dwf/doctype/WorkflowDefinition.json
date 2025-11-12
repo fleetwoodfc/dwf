@@ -1,0 +1,15 @@
+{"""
+  "doctype": "DocType",
+  "name": "WorkflowDefinition",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "workflow_id", "fieldtype": "Data", "label": "Workflow ID"},
+    {"fieldname": "version", "fieldtype": "Data", "label": "Version"},
+    {"fieldname": "description", "fieldtype": "Text", "label": "Description"},
+    {"fieldname": "activities", "fieldtype": "Table", "options": "Workflow Activity", "label": "Activities"},
+    {"fieldname": "transitions", "fieldtype": "Text", "label": "Transitions JSON"}
+  ],
+  "is_submittable": 0,
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""

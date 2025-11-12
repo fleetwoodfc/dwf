@@ -1,0 +1,19 @@
+{"""
+  "doctype": "DocType",
+  "name": "Message",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "message_id", "fieldtype": "Data", "label": "Message ID"},
+    {"fieldname": "message_type", "fieldtype": "Data", "label": "Message Type"},
+    {"fieldname": "payload", "fieldtype": "Text", "label": "Payload"},
+    {"fieldname": "source", "fieldtype": "Link", "options": "Actor", "label": "Source"},
+    {"fieldname": "destination", "fieldtype": "Link", "options": "Actor", "label": "Destination"},
+    {"fieldname": "correlation_id", "fieldtype": "Data", "label": "Correlation ID"},
+    {"fieldname": "status", "fieldtype": "Select", "options": "received\nprocessing\nprocessed\nfailed\nretry", "label": "Status"},
+    {"fieldname": "received_at", "fieldtype": "Datetime", "label": "Received At"},
+    {"fieldname": "processed_at", "fieldtype": "Datetime", "label": "Processed At"},
+    {"fieldname": "error_detail", "fieldtype": "Text", "label": "Error Detail"}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""

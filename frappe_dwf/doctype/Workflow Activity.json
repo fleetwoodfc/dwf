@@ -1,0 +1,15 @@
+{"""
+  "doctype": "DocType",
+  "name": "Workflow Activity",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "activity_id", "fieldtype": "Data", "label": "Activity ID"},
+    {"fieldname": "label", "fieldtype": "Data", "label": "Label"},
+    {"fieldname": "actor", "fieldtype": "Link", "options": "Actor", "label": "Actor"},
+    {"fieldname": "task_type", "fieldtype": "Select", "options": "manual\nautomatic", "label": "Task Type"},
+    {"fieldname": "timeout_seconds", "fieldtype": "Int", "label": "Timeout (s)"},
+    {"fieldname": "metadata", "fieldtype": "Text", "label": "Metadata (JSON)"}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""

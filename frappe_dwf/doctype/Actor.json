@@ -1,0 +1,14 @@
+{"""
+  "doctype": "DocType",
+  "name": "Actor",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "actor_id", "fieldtype": "Data", "label": "Actor ID"},
+    {"fieldname": "actor_type", "fieldtype": "Select", "options": "system\nuser\nservice", "label": "Actor Type"},
+    {"fieldname": "mapped_user", "fieldtype": "Link", "options": "User", "label": "Mapped User"},
+    {"fieldname": "default_endpoint", "fieldtype": "Link", "options": "Endpoint", "label": "Default Endpoint"},
+    {"fieldname": "metadata", "fieldtype": "Text", "label": "Metadata (JSON)"}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""

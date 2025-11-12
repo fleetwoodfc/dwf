@@ -1,0 +1,14 @@
+{"""
+  "doctype": "DocType",
+  "name": "Endpoint",
+  "module": "Frappe DWF",
+  "fields": [
+    {"fieldname": "url", "fieldtype": "Data", "label": "URL"},
+    {"fieldname": "protocol", "fieldtype": "Select", "options": "http\nhttps\nsoap\nmllp", "label": "Protocol"},
+    {"fieldname": "auth_type", "fieldtype": "Select", "options": "none\nbasic\noauth2\nmtls", "label": "Auth Type"},
+    {"fieldname": "credentials", "fieldtype": "Text", "label": "Credentials (secure)"},
+    {"fieldname": "description", "fieldtype": "Data", "label": "Description"}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}
+"""
