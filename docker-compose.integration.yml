@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  orthanc:
+    image: jodogne/orthanc:1.9.0
+    container_name: orthanc_integration
+    ports:
+      - "8042:8042" # Orthanc REST API
+      - "4242:4242" # DICOM
+    volumes:
+      - ./orthanc/data:/var/lib/orthanc/db
+  mock_frappe:
+    build: ./frappe_dwf/mock_frappe
+    container_name: mock_frappe
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./frappe_dwf/mock_frappe/data:/data
