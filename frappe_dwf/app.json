@@ -1,0 +1,8 @@
+{
+  "app_name": "frappe_dwf",
+  "app_title": "Frappe DWF",
+  "publisher": "fleetwoodfc",
+  "description": "Minimal Frappe app for IHE Departmental Workflow (DWF) mapping",
+  "doctype": "DocType",
+  "version": "0.0.1"
+}
