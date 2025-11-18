@@ -1,0 +1,11 @@
+{
+  "ups_id": "UPS-20251114-0001",
+  "rp_id": "RP-0001",
+  "ups_status": "COMPLETED",
+  "actor": "3D-PostProc-Node-1",
+  "instance_uids": [
+    "1.2.840.113619.2.55.3.604688416.1234.1590452345.3"
+  ],
+  "start_time": "2025-11-14T15:55:00Z",
+  "end_time": "2025-11-14T16:02:00Z"
+}
